@@ -92,7 +92,7 @@ Country代码：
 <dependency>
     <groupId>tk.mybatis</groupId>
     <artifactId>mapper</artifactId>
-    <version>3.3.1</version>
+    <version>3.3.4</version>
 </dependency>
 ```
 
@@ -108,9 +108,20 @@ http://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/
 
 ##[更新日志](http://git.oschina.net/free/Mapper/blob/master/wiki/Changelog.md)
 
-##Maven坐标以及下载地址
+##最新版本3.3.4 - 2016-01-05
 
-###最新版本3.3.2 - 2015-12-12
+* 解决insertList的bug#86
+* `Example`构造方法增加`notNull`参数，默认`false`，允许值为`null`，值为`null`的时候不加入到条件中。
+* `seqFormat`格式化参数增加第四个可配置值`TableName`，该属性的具体含义请参考[如何集成通用Mapper](http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/2.Integration.md)中的参数介绍
+
+###3.3.3 - 2015-12-30
+
+- 解决OGNL中的and,or大写导致的错误
+- 解决SpecialProvider不支持insertable的bug#77
+- 解决JDK6,7无法获取字段泛型类型的问题。
+- 提供一个Spring Boot集成的示例: https://github.com/abel533/MyBatis-Spring-Boot
+
+###3.3.2 - 2015-12-12
 
 - 解决数据越界bug#73
 - 解决and少空格问题
